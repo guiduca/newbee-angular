@@ -1,9 +1,15 @@
 <div>
-  <h2>{{palowan.firstname}} Details</h2>
-  <div><span>id: </span>{{palowan.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="palowan.firstname" placeholder="name"/>
-    </label>
+  <div class="palowan">
+    <h2>{{palowan.firstname}}</h2>
+    <div>
+      <span>id: </span>{{palowan.ID}}</div>
+    <div>
+      <span>info: </span>{{palowan.info}}</div>
+  <span *ngIf="palowan.subordinate.length>0">Subordinate:</span>      
+  </div>
+  <div *ngIf="palowan.subordinate.length>0" class="subordinate">
+    <li *ngFor="let subordinate of palowan.subordinate">
+      <app-palowan-info [palowan]='subordinate'></app-palowan-info>
+    </li>
   </div>
 </div>

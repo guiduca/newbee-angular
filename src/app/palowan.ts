@@ -4,6 +4,6 @@ export class Palowan {
   lastname: string;
   role: string;
   hive: string;
-  immediateSup: number;
   info: string;
+  subordinate: Array<Palowan>
 }
